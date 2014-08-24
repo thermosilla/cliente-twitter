@@ -1,3 +1,5 @@
 venv/
 .py[cod]
 *_local.py
+*.swp
+tags
