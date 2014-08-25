@@ -4,5 +4,6 @@ __pycache__/
 .py[cod]
 *_local.py
 
+*.txt
 *.swp
 tags
