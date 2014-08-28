@@ -8,10 +8,16 @@ app.debug = True
 def home():
     return "Página de prueba"
 
-@app.route("/q/<query>")
-def buscar(query):
+@app.route("/q/<query>/json")
+def buscar_json(query):
     tweets = tw.search(query)
     return jsonify(tweets)
+
+@app.route("/q/<query>")
+def buscar_html(query):
+    tweets = tw.search(query)
+    return render_template("resultados.html", tweets=tweets)
+
 
 if __name__ == '__main__':
         app.run()
