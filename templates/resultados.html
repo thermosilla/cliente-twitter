@@ -1,8 +1,12 @@
 <!doctype html>
 <html>
     <head>
-        <title>Resultados para</title>
+        <title>Resultados para Búsqueda</title>
     </head>
     <body>
+        {% for tweet in tweets["statuses"] %}
+        <p><strong><a href="https://twitter.com/{{tweet['user']['screen_name']}}">{{ tweet["user"]["screen_name"] }}</a>
+        </strong>: {{ tweet["text"] }}</p>
+        {% endfor %}
     </body>
 </html>

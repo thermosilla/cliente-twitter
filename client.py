@@ -1,8 +1,10 @@
 from flask import Flask, url_for, redirect, jsonify, render_template
 import lib.twitterapi as tw
 
+
 app = Flask(__name__)
-app.debug = True
+app.debug = True # Eliminar para producción
+
 
 @app.route("/")
 def home():
