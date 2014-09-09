@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% block title %}CliTwit: ejemplo de uso de la API de twitter{% endblock %}
 
+{% block navbar%}
+<form class="navbar-form navbar-right" role="form" action="/search" method="POST">
+    <input name="q" type="text" placeholder="Buscar..." class="form-control" action="search" method="GET">
+</form>
+{% endblock %}
+
 {% block content %}
 <div class="jumbotron">
     <h1>Bienvenido a CliTwit</h1>

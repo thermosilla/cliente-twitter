@@ -1,4 +1,4 @@
-from flask import Flask, url_for, redirect, jsonify, render_template
+from flask import Flask, url_for, redirect, jsonify, render_template, request
 import lib.twitterapi as tw
 
 
@@ -16,10 +16,19 @@ def buscar_json(query):
     return jsonify(tweets)
 
 @app.route("/q/<query>")
-def buscar_html(query):
+#@app.route("/search", methods=['POST'])
+def buscar_html(query=False):
+    if not query:
+        query = request.form['q']
     tweets = tw.search(query)
     return render_template("resultados.html", tweets=tweets)
 
+
+@app.route("/search", methods=['POST'])
+def buscar_post():
+    query = request.form['q']
+    return redirect(url_for('buscar_html', query=query))
+    
 
 if __name__ == '__main__':
         app.run()
