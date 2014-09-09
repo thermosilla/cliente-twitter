@@ -8,7 +8,7 @@ app.debug = True # Eliminar para producción
 
 @app.route("/")
 def home():
-    return "Página de prueba"
+    return render_template("home.html")
 
 @app.route("/q/<query>/json")
 def buscar_json(query):
