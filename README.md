@@ -32,7 +32,3 @@ CUALQUIER TEORÍA DE RESPONSABILIDAD, YA SEA POR CONTRATO, RESPONSABILIDAD ESTRI
 O AGRAVIO (INCLUYENDO NEGLIGENCIA O CUALQUIER OTRA CAUSA) QUE SURJA DE CUALQUIER
 MANERA DEL USO DE ESTE SOFTWARE, INCLUSO SI SE HA ADVERTIDO DE LA POSIBILIDAD DE
 TALES DAÑOS.
-
-Las opiniones y conclusiones contenidas en el software y la documentación son las
-de los autores y no deben interpretarse como la representación de las políticas
-oficiales, ya sea expresa o implícita, de Tomás Hermosilla.

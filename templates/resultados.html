@@ -3,7 +3,11 @@
 
 {% block content %}
     {% for tweet in tweets["statuses"] %}
-    <p><strong><a href="https://twitter.com/{{tweet['user']['screen_name']}}">{{ tweet["user"]["screen_name"] }}</a>
-    </strong>: {{ tweet["text"] }}</p>
+    <p>
+        <strong>
+            <a href="https://twitter.com/{{tweet['user']['screen_name']}}">
+                {{ tweet["user"]["screen_name"] }}
+            </a>
+        </strong>: {{ tweet["text"] }}</p>
     {% endfor %}
 {% endblock %}
