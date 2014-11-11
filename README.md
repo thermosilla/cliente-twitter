@@ -5,7 +5,7 @@ Cliente de twitter de ejemplo para clase de automatización en redes sociales
 ## Librerías Utilizadas
 
 * [Python Twitter Tools](http://mike.verdone.ca/twitter/)
-* [Flask](http://flask.pocoo.org/) 
+* [Flask](http://flask.pocoo.org/)
 
 ## Licencia BSD
 

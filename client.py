@@ -28,8 +28,8 @@ def buscar_html(query=False):
 @app.route("/search", methods=['POST'])
 def buscar_post():
     query = request.form['q']
-    return redirect(url_for('buscar_html', query=url.quote(query)))
+    return redirect(url_for('buscar_html', query=url.quote_plus(query)))
     
 
 if __name__ == '__main__':
-        app.run()
+    app.run()
