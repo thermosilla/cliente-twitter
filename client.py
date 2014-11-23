@@ -1,4 +1,5 @@
 import lib.twitterapi as tw
+import models.twitter as dbtw
 import urllib.parse as url
 
 from flask import Flask, url_for, redirect, jsonify, render_template, request
@@ -24,12 +25,15 @@ def buscar_html(query=False):
     tweets = tw.search(query)
     return render_template("resultados.html", tweets=tweets)
 
-
 @app.route("/search", methods=['POST'])
 def buscar_post():
     query = request.form['q']
     return redirect(url_for('buscar_html', query=url.quote_plus(query)))
-    
+
+@app.route("/createdb")
+def createdb():
+    return dbtw.main()
+
 
 if __name__ == '__main__':
     app.run()
