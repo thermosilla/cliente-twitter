@@ -1,4 +1,5 @@
 from nltk.corpus import cess_esp as cess
+import nltk
 from nltk import UnigramTagger as ut
 from nltk import BigramTagger as bt
 
