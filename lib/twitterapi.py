@@ -7,3 +7,6 @@ t = Twitter(auth=OAuth(conf.TOKEN, conf.TOKEN_KEY, conf.CON_SECRET,
 
 def search(query):
     return t.search.tweets(q=query)
+
+def streaming_search(query):
+    pass

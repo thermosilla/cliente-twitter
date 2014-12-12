@@ -7,12 +7,13 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 
-class Twit(Base):
-    __tablename__ = 'twits'
+class Tweet(Base):
+    __tablename__ = 'tweets'
 
     id = Column(Integer, primary_key = True)
     user = Column(String) # Saves a hashed twitter user ID
     text = Column(Text)
+    search_term = Column(Text) # Saves the search term
     created_at = Column(DateTime)
 
     def __repr__(self):

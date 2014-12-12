@@ -1,39 +1,25 @@
+#!/usr/bin/env python
+
 import lib.twitterapi as tw
 import models.twitter as dbtw
-import urllib.parse as url
-
-from flask import Flask, url_for, redirect, jsonify, render_template, request
+import argh
 
 
-app = Flask(__name__)
-app.debug = True # Eliminar para producción
+def read_tweets():
+    pass
+
+def save():
+    pass
+
+def create_tables():
+    print(dbtw.main())
 
 
-@app.route("/")
-def home():
-    return render_template("home.html")
-
-@app.route("/q/<query>/json")
-def buscar_json(query):
-    tweets = tw.search(query)
-    return jsonify(tweets)
-
-@app.route("/q/<query>")
-def buscar_html(query=False):
-    if not query:
-        query = request.form['q']
-    tweets = tw.search(query)
-    return render_template("resultados.html", tweets=tweets)
-
-@app.route("/search", methods=['POST'])
-def buscar_post():
-    query = request.form['q']
-    return redirect(url_for('buscar_html', query=url.quote_plus(query)))
-
-@app.route("/createdb")
-def createdb():
-    return dbtw.main()
+# Crea comandos
+parser = argh.ArghParser()
+parser.add_commands([read_tweets, save, create_tables])
 
 
 if __name__ == '__main__':
-    app.run()
+    parser.dispatch()
+
